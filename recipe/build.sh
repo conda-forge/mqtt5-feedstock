@@ -19,8 +19,8 @@ fi
 # Use native-tls on conda-forge
 export MATURIN_PEP517_ARGS="--no-default-features"
 
-# Run the maturin build via pip which works for direct and
-# cross-compiled builds.
+# Run the maturin build via pip which works for direct and cross-compiled builds.
+[ "${target_platform}" == "linux-riscv64" ] && export CC="${ZIG_CC}"
 $PYTHON -m pip install -v --use-pep517 --no-deps --no-build-isolation .
 
 cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
