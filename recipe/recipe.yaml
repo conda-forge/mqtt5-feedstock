@@ -10,13 +10,13 @@ context:
 package:
   name: mqtt5
   version: ${{ version }}
-  
+
 source:
   url: https://pypi.org/packages/source/m/mqtt5/mqtt5-${{ version }}.tar.gz
   sha256: b210ce32ce98731b42589a0ae655a10511fb61052a4b9e0afbfc70937b9cbd16
 
 build:
-  number: 1
+  number: 2
   skip: is_abi3 and not is_python_min
   script: build.sh
   python:
